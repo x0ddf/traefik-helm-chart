@@ -1,6 +1,6 @@
 # traefik
 
-![Version: 28.3.0](https://img.shields.io/badge/Version-28.3.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v3.0.3](https://img.shields.io/badge/AppVersion-v3.0.3-informational?style=flat-square)
+![Version: 28.3.1](https://img.shields.io/badge/Version-28.3.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v3.0.3](https://img.shields.io/badge/AppVersion-v3.0.3-informational?style=flat-square)
 
 A Traefik based Kubernetes ingress controller
 
@@ -38,10 +38,10 @@ Kubernetes: `>=1.22.0-0`
 | deployment.additionalContainers | list | `[]` | Additional containers (e.g. for metric offloading sidecars) |
 | deployment.additionalVolumes | list | `[]` | Additional volumes available for use with initContainers and additionalContainers |
 | deployment.annotations | object | `{}` | Additional deployment annotations (e.g. for jaeger-operator sidecar injection) |
-| deployment.dnsConfig | object | `{}` | Custom pod DNS policy. Apply if `hostNetwork: true` dnsPolicy: ClusterFirstWithHostNet |
+| deployment.dnsConfig | object | `{}` | Custom pod [DNS config](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.30/#poddnsconfig-v1-core) |
 | deployment.enabled | bool | `true` | Enable deployment |
 | deployment.hostAliases | list | `[]` | Custom [host aliases](https://kubernetes.io/docs/tasks/network/customize-hosts-file-for-pods/) |
-| deployment.imagePullSecrets | list | `[]` | Additional imagePullSecrets |
+| deployment.imagePullSecrets | list | `[]` | Pull secret for fetching traefik container image |
 | deployment.initContainers | list | `[]` | Additional initContainers (e.g. for setting file permission as shown below) |
 | deployment.kind | string | `"Deployment"` | Deployment or DaemonSet |
 | deployment.labels | object | `{}` | Additional deployment labels (e.g. for filtering deployment by custom labels) |

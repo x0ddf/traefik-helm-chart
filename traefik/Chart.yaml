@@ -25,11 +25,7 @@ maintainers:
 icon: https://raw.githubusercontent.com/traefik/traefik/v2.3/docs/content/assets/img/traefik.logo.png
 annotations:
   artifacthub.io/changes: |
-    - "fix: 🐛 namespaced rbac when kubernetesIngress provider is disabled"
-    - "fix: 🐛  add divisor: '1' to GOMAXPROCS and GOMEMLIMIT"
-    - "fix(security): 🐛 🔒️ mount service account token on pod level"
-    - "fix(Traefik Hub): remove obsolete CRD"
-    - "fix(Traefik Hub): remove namespace in mutating webhook"
-    - "feat: allow setting permanent on redirectTo"
-    - "chore(release): publish v28.3.0"
-    - "chore(deps): update traefik docker tag to v3.0.2"
+    - "test oci release"
+    - "fix:  allow multiples values in the `secretResourceNames` slice"
+    - "feat: allow to set hostAliases for traefik pod"
+    - "chore(deps): update traefik docker tag to v3.0.3"
