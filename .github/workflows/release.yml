@@ -71,20 +71,20 @@ jobs:
           artifacts: "traefik.yaml"
         if: steps.tag_exists.outputs.TAG_EXISTS == 'false'
 
-      - name: Publish Helm chart
-        uses: stefanprodan/helm-gh-pages@master
-        with:
-          token: ${{ secrets.CHARTS_TOKEN }}
-          charts_dir: .
-          charts_url: https://traefik.github.io/charts
-          owner: traefik
-          repository: charts
-          branch: master
-          target_dir: traefik
-          index_dir: .
-          commit_username: traefiker
-          commit_email: 30906710+traefiker@users.noreply.github.com
-        if: steps.tag_exists.outputs.TAG_EXISTS == 'false'
+#      - name: Publish Helm chart
+#        uses: stefanprodan/helm-gh-pages@master
+#        with:
+#          token: ${{ secrets.CHARTS_TOKEN }}
+#          charts_dir: .
+#          charts_url: https://traefik.github.io/charts
+#          owner: traefik
+#          repository: charts
+#          branch: master
+#          target_dir: traefik
+#          index_dir: .
+#          commit_username: traefiker
+#          commit_email: 30906710+traefiker@users.noreply.github.com
+#        if: steps.tag_exists.outputs.TAG_EXISTS == 'false'
 
       - name: Publish Helm chart to the OCI registry
         uses: appany/helm-oci-chart-releaser@v0.4.2
