@@ -85,3 +85,17 @@ jobs:
           commit_username: traefiker
           commit_email: 30906710+traefiker@users.noreply.github.com
         if: steps.tag_exists.outputs.TAG_EXISTS == 'false'
+
+      - name: Publish Helm chart to the OCI registry
+        uses: appany/helm-oci-chart-releaser@v0.4.2
+        with:
+          name: traefik
+          repository:  ${{ secrets.REGISTRY_USERNAME }}
+          tag: ${{ steps.chart_version.outputs.CHART_VERSION }}
+          path: ./traefik # Default charts/{name}
+          registry: ghcr.io
+          registry_username: ${{ secrets.REGISTRY_USERNAME }}
+          registry_password: ${{ secrets.REGISTRY_PASSWORD }}
+          update_dependencies: 'true' # Defaults to false
+        if: steps.tag_exists.outputs.TAG_EXISTS == 'false'
+        # helm pull ghcr.io/appany/my-chart:0.1.0
